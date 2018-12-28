@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 
 try:
 
-    html = urlopen("https://www.python.org/")
+    html = urlopen("https://www.polimi.it/")
 
 except HTTPError as e:
 
@@ -22,7 +22,7 @@ else:
 
     res = BeautifulSoup(html.read(), "html5lib")
 
-    tags = res.findAll("h2", {"class": "widget-title"})
+    tags = res.findAll("span", {"class": "newsSubHeader"})
 
     for tag in tags:
 
